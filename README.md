@@ -4,6 +4,19 @@
 
 仓库：[bsafebseen-crypto/codex-proxy-launcher](https://github.com/bsafebseen-crypto/codex-proxy-launcher)。这是个人维护的工具，不是 OpenAI 官方产品，也不保证解决所有“Reconnecting 1/5…5/5”问题。
 
+## 复制给 Agent 的简短提示词
+
+将下面整段复制给新电脑上的 Agent：
+
+```text
+请在这台 Windows 电脑安装并适配 Codex 自动代理启动器：
+https://github.com/bsafebseen-crypto/codex-proxy-launcher
+
+先完整克隆或下载仓库（已有则复用，保留本地修改），阅读 AGENTS.md、README.md、docs/AGENT-HANDOFF.md 和实际脚本，按文档操作。
+自动检测可用本地代理，先检查预览，再安装带图标的桌面和开始菜单入口并验证。正常安装已授权，请直接完成。
+代理只用于新 Codex 进程；不改系统代理、其他软件或 Codex 配置，不关闭现有 Codex。真实启动等我正常退出，最后报告结果及恢复方法。
+```
+
 ## 换一台电脑怎么用
 
 适用范围：Windows 原生环境、当前用户已安装的 `OpenAI.Codex` Store／MSIX 包、Windows PowerShell 5.1 和 `curl.exe`。已在 Windows 11 上验证；未实测 Windows 10、ARM64、WSL、macOS 或 Linux。具体应用支持的系统要求以 [OpenAI Windows 文档](https://learn.chatgpt.com/docs/windows/windows-app) 为准。
