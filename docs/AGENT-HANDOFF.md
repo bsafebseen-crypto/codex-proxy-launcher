@@ -33,7 +33,7 @@
 ## 新电脑操作顺序
 
 1. 从官方渠道安装 Codex，正常启动、登录，确认账号可用。安装并开启自己使用的代理客户端，确认其 HTTP／混合端口已开启。启动器不会替你安装、配置或启动代理。
-2. 将这个公开仓库完整 clone／下载到准备长期保留的目录。下载 ZIP 时先完整解压，保留共享脚本和所有配套文件。不要复制旧电脑的 `.lnk`、登录配置或本机诊断文件。
+2. 将[这个公开仓库](https://github.com/bsafebseen-crypto/codex-proxy-launcher)完整 clone／下载到准备长期保留的目录。下载 ZIP 时先完整解压，保留共享脚本和所有配套文件。不要复制旧电脑的 `.lnk`、登录配置或本机诊断文件。
 3. 在仓库根目录打开 Windows PowerShell，执行下面的环境检查和两个预览命令。主启动器的检查可以在 Codex 仍运行时执行。
 4. 预览无误后运行快捷方式安装器，正常安装时还会检查同名入口冲突。它在本机生成英文名 **Codex Auto Proxy** 的桌面和当前用户开始菜单入口，按需复制图标到 `.local/`，没有匹配资源时使用本机可执行文件图标。它不自动固定到“开始”；需要固定时，在正常 Windows 界面右键 **Codex Auto Proxy** 选择固定。若报告同名入口指向别处，先核对并备份／移除属于旧安装的入口，再重试；预览成功不代表已完成安装或排除了同名冲突。
 5. 保存当前工作，通过应用正常退出 Codex。仅关窗口可能仍有后台进程；启动器提示仍运行时，应正常退出后重试，不能强杀。
@@ -63,10 +63,19 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Install-Shortcuts.ps1
 
 ## 交给其他 Agent 的完整提示词
 
-复制以下整段，并让 Agent 在本仓库目录中执行：
+复制以下整段给 Agent 即可；提示词包含仓库地址和获取方式，无需事先打开仓库目录：
 
 ```text
-请在这台 Windows 电脑核查并适配当前仓库 codex-proxy-launcher，使我能通过带图标的桌面和开始菜单入口启动 Codex，并让 Codex 使用当前可用的本地代理。先阅读仓库 AGENTS.md、README.md、docs/AGENT-HANDOFF.md 和实际脚本，核实环境，再作最小修改。
+请在这台 Windows 电脑核查并适配公开仓库 codex-proxy-launcher，使我能通过带图标的桌面和开始菜单入口启动 Codex，并让 Codex 使用当前可用的本地代理。
+
+仓库地址：https://github.com/bsafebseen-crypto/codex-proxy-launcher
+完整教程：https://github.com/bsafebseen-crypto/codex-proxy-launcher/blob/main/docs/AGENT-HANDOFF.md
+
+若本机已有此仓库，先核实来源并复用，不重置或覆盖已有修改；若尚未获取，在本机准备长期保留的目录中执行：
+git clone https://github.com/bsafebseen-crypto/codex-proxy-launcher.git
+如果 Git 不可用，可下载 https://github.com/bsafebseen-crypto/codex-proxy-launcher/archive/refs/heads/main.zip 并完整解压。不要仅查看网页或只下载两个启动文件，也不要从临时目录安装入口。
+
+进入完整仓库目录，先阅读 AGENTS.md、README.md、docs/AGENT-HANDOFF.md 和实际脚本，核实环境，再作最小修改。正常获取源码并在本机安装属于本次授权，不需要为此再次征求确认。
 
 当前已验证环境为Windows 11、Windows PowerShell 5.1、curl.exe、当前用户的Codex Store/MSIX包OpenAI.Codex；Windows 10和ARM64未实测，具体系统要求以README链接的OpenAI官方文档为准。先只读确认本机条件，通过共享Get-CodexApp.ps1读取Get-AppxPackageManifest中主应用Id=App的Executable，核实实际可执行路径、当前代理进程和监听端口。代理可能是Clash、mihomo、v2rayN、Xray、sing-box等；不固定端口，不按端口号推断协议，不扫描整个硬盘，不读取订阅、节点、密钥或登录凭据。完整保留整个仓库和共享脚本，不能只复制两个启动文件。
 
