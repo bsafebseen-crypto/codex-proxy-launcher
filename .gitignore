@@ -1,0 +1,24 @@
+# Per-computer generated files; never store shortcuts or copied app icons.
+.local/
+*.lnk
+*.ico
+
+# Credentials, local configuration, logs and machine state.
+.env
+.env.*
+auth.json
+config.toml
+*.sqlite*
+*.db
+*.log
+*.jsonl
+*.har
+*.pem
+*.key
+
+# Editor and archive output.
+.vscode/
+.idea/
+*.zip
+Thumbs.db
+Desktop.ini
