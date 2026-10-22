@@ -10,7 +10,7 @@
 
 1. 在新电脑安装并正常登录官方桌面应用，先确认 `Get-AppxPackage -Name OpenAI.Codex` 能找到它。安装来源参见 [OpenAI Windows 部署说明](https://learn.chatgpt.com/docs/enterprise/windows-deployment)。本工具不安装应用、不迁移账号登录信息。
 2. 安装并开启自己的 Clash、v2rayN、mihomo、sing-box 等代理客户端，确保至少有一个本机 HTTP／混合端口；SOCKS 专用端口不能直接用于本工具。
-3. 将本仓库克隆或下载 ZIP 并解压到一个长期保留的目录。私有仓库需要使用有权限的 GitHub 账号登录：
+3. 将这个公开仓库克隆或下载 ZIP 并解压到一个长期保留的目录：
 
    ```powershell
    git clone https://github.com/bsafebseen-crypto/codex-proxy-launcher.git
